@@ -106,6 +106,15 @@ a { color: var(--navy-2); }
 .link-card b { display: block; color: var(--navy); font-size: 15px; }
 .link-card.is-pending { opacity: .55; }
 
+/* 開発者・発売元とともに */
+.trust { padding-top: 40px; }
+.trust-photo { margin: 0 auto; max-width: 900px; }
+.trust-photo img { border-radius: var(--radius); box-shadow: 0 14px 34px rgba(30, 42, 70, .14); }
+.trust-photo figcaption { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.5; }
+.trust-photo figcaption b { display: block; color: var(--navy); font-size: 14px; }
+.trust-text { margin-top: 18px; text-align: center; }
+@media (max-width: 600px) { .trust-photo figcaption { font-size: 11px; } .trust-photo figcaption b { font-size: 12.5px; } .trust-text { text-align: left; } }
+
 /* セクション共通 */
 section.block { padding: 64px 0; }
 section.block.alt { background: var(--paper); }
