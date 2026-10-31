@@ -41,6 +41,12 @@ a { color: var(--navy-2); }
 .brand small { display: block; font-family: var(--sans); font-weight: 400; font-size: 11px; color: var(--muted); letter-spacing: .02em; }
 .header-cta { font-size: 14px; }
 
+@media (max-width: 600px) {
+  .brand { font-size: 14.5px; }
+  .brand small { font-size: 10px; }
+  .header-cta { padding: 9px 14px; font-size: 13px; white-space: nowrap; }
+}
+
 /* ボタン */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -68,6 +74,37 @@ a { color: var(--navy-2); }
 @media (min-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr 1.1fr; padding: 64px 0 72px; }
 }
+
+/* 商品中心のヒーロー */
+.hero-products { background: radial-gradient(120% 90% at 50% 10%, #2f4170 0%, #1e2a46 55%, #141c30 100%); color: #e9ecf3; }
+.hero-products .wrap { grid-template-columns: 1fr; text-align: center; padding: 34px 0 40px; gap: 18px; }
+.hero-products .eyebrow { color: #d6bd84; }
+.hero-products h1 { color: #fff; font-size: clamp(26px, 5.4vw, 44px); margin: 0 0 10px; }
+.hero-products h1 .amp { color: #d6bd84; margin: 0 .1em; }
+.hero-products h1 small { display: block; font-size: .5em; letter-spacing: .3em; color: #d6bd84; margin-top: 8px; font-family: var(--sans); font-weight: 700; }
+.hero-products .lead { color: #cfd5e3; max-width: 640px; margin: 0 auto; font-size: 15.5px; }
+.hero-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 760px; margin: 6px auto 0; width: 100%; }
+.pick { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 10px 14px; border-radius: 16px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(214, 189, 132, .45); color: #fff; text-decoration: none; transition: background .2s, transform .2s; }
+.pick:hover { transform: translateY(-2px); }
+.pick img { width: 100%; height: clamp(240px, 52vw, 420px); object-fit: contain; object-position: center; background: #eceef2; padding: 10px; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 16px 36px rgba(0, 0, 0, .35); }
+.pick:hover { background: rgba(255, 255, 255, .14); }
+.pick-name { font-family: var(--serif); font-weight: 700; font-size: clamp(15px, 3.6vw, 19px); }
+.pick-price { font-family: var(--serif); font-size: clamp(18px, 4.2vw, 24px); color: #d6bd84; }
+.pick-go { font-size: 13px; color: #cfd5e3; }
+@media (min-width: 900px) {
+  .hero-products .wrap { grid-template-columns: 1fr; padding: 56px 0 60px; }
+}
+
+/* 人の紹介への入口 */
+.intro-links { padding: 28px 0 8px; }
+.link-cards { display: grid; gap: 12px; }
+@media (min-width: 900px) { .link-cards { grid-template-columns: repeat(3, 1fr); } }
+.link-card { display: flex; align-items: center; gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; text-decoration: none; color: var(--ink); font-size: 13.5px; line-height: 1.6; }
+.link-card:hover { border-color: var(--gold); }
+.link-card img { width: 56px; height: 56px; object-fit: cover; object-position: center 20%; border-radius: 50%; flex: 0 0 56px; }
+.link-card .initial { width: 56px; height: 56px; flex: 0 0 56px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 22px; }
+.link-card b { display: block; color: var(--navy); font-size: 15px; }
+.link-card.is-pending { opacity: .55; }
 
 /* セクション共通 */
 section.block { padding: 64px 0; }
@@ -99,6 +136,8 @@ section.block.alt { background: var(--paper); }
 .products { display: grid; gap: 24px; }
 @media (min-width: 900px) { .products { grid-template-columns: 1fr 1fr; } }
 .product { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; }
+.product-img { width: auto; max-height: 300px; margin: 0 auto 16px; border-radius: 12px; }
+.product .desc { margin: 12px 0 0; font-size: 15px; }
 .product .tag { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold-soft); border-radius: 999px; padding: 2px 12px; }
 .product h3 { font-family: var(--serif); color: var(--navy); font-size: 25px; margin: 10px 0 4px; }
 .product .reading { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
@@ -117,6 +156,8 @@ section.block.alt { background: var(--paper); }
 .gift .no { flex: 0 0 38px; height: 38px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
 .gift h3 { margin: 0 0 2px; font-size: 16.5px; color: var(--navy); }
 .gift p { margin: 0; font-size: 14px; color: var(--muted); }
+
+.gift-photo { border-radius: var(--radius); margin: 0 auto 18px; max-width: 900px; width: 100%; }
 
 /* サポート */
 .support { display: grid; gap: 18px; }
@@ -151,6 +192,18 @@ table.law { width: 100%; border-collapse: collapse; background: #fff; font-size:
 table.law th, table.law td { border: 1px solid var(--line); padding: 12px 14px; vertical-align: top; text-align: left; }
 table.law th { width: 32%; background: var(--paper); color: var(--navy); }
 @media (max-width: 600px) { table.law th, table.law td { display: block; width: 100%; } table.law th { border-bottom: none; } }
+.page h2 { font-family: var(--serif); color: var(--navy); font-size: 20px; margin: 32px 0 8px; }
+.profile { display: grid; gap: 22px; align-items: start; margin: 18px 0 8px; }
+@media (min-width: 760px) { .profile { grid-template-columns: 240px 1fr; } }
+.profile img, .profile .photo-ph { border-radius: var(--radius); width: 100%; }
+.profile .photo-ph { aspect-ratio: 3 / 4; background: var(--paper); border: 1px dashed var(--line); display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+.profile .role { color: var(--gold); font-weight: 700; font-size: 13px; letter-spacing: .1em; margin: 0; }
+.profile .name { font-family: var(--serif); color: var(--navy); font-size: 26px; margin: 2px 0 2px; }
+.profile .kana { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.facts { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; font-size: 14.5px; }
+.facts li { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+.facts b { color: var(--navy); margin-right: 8px; }
+.quote { font-family: var(--serif); color: var(--navy); font-size: 18px; border-left: 3px solid var(--gold); padding: 6px 0 6px 14px; margin: 20px 0; }
 .todo { background: #fff3cd; color: #7a5b00; padding: 0 4px; border-radius: 3px; font-weight: 700; }
 
 /* スマホ下部の購入ボタン */

@@ -22,9 +22,10 @@ window.SHOP_CONFIG = {
       bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=cUzEvHSXz",
     },
     sora: {
-      name: "数霊REIWA・空",
-      // 税込価格（円）。未確定のあいだは null（「価格確認中」と表示し、購入ボタンを出さない）【要確認】
-      price: null,
+      name: "数霊ZENWA・空",
+      // 税込価格（円）。吉野内先生の解説動画のスライド「217,800円(税込)」より【販売価格として要確認】
+      // 未確定にしたいときは null（「価格確認中」と表示し、購入ボタンを出さない）
+      price: 217800,
       // 振込の申込先。現行は旧ZENWA用フォーム【要確認】
       bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=ebeEvHSc",
     },
