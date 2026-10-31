@@ -11,6 +11,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 | `tokushoho.html` | 特定商取引法に基づく表記 |
 | `privacy.html` | プライバシーポリシー |
 | `thanks.html` | PayPal決済完了後のお礼ページ（購入の計測もここへ遷移する前に送る） |
+| `apply-thanks.html` | 銀行振込の申込完了ページ（ステップメール「アスメル」の購読完了ページに設定する。`?item=reiwa` / `?item=sora`） |
 | `assets/js/config.js` | **価格・PayPalクライアントID・GA4測定ID・振込フォームURL・YouTube URL はここだけ書き換える** |
 | `assets/js/main.js` | 価格表示、PayPalボタン、GA4のイベント送信 |
 | `assets/css/style.css` | 見た目 |
@@ -30,6 +31,15 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 | `begin_checkout` | PayPalボタンを押した |
 | `purchase` | PayPalの支払いが完了した（注文番号つき） |
 | `generate_lead` | 銀行振込の申込フォームへ進んだ |
+| `bank_apply_complete` | 銀行振込の申込フォームを送信し終えた（`apply-thanks.html`） |
+
+## 銀行振込の申込（アスメル）
+
+- 申込フォーム・自動返信・通知はステップメール「アスメル」（1lejend.com）を使う。通知先は kazutama@you-planning.org
+- 公開の日に、アスメルの「購読完了ページURL」を次に付け替える（旧WordPressを消す前に必ず）
+  - 数霊REIWA：`https://kazutama.you-planning.org/apply-thanks.html?item=reiwa`
+  - 数霊ZENWA・空：`https://kazutama.you-planning.org/apply-thanks.html?item=sora`
+- 自動返信の文面の改訂案は `D:\数霊プロジェクト\申込フォーム_アスメル\` にある（口座番号を含むので、このリポジトリには入れない）
 
 YouTubeの概要欄のリンクには、どの動画から来たか分かるように印を付ける：
 `https://kazutama.you-planning.org/?utm_source=youtube&utm_medium=video&utm_campaign=<動画の番号>`

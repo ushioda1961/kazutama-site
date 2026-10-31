@@ -139,6 +139,16 @@
     }
   }
 
+  // ---- 振込申込の完了ページ（アスメルの購読完了ページ）：商品名を出して、申込完了を計測する ----
+  function showApplied() {
+    var el = document.getElementById("applied-item");
+    if (!el) return;
+    var key = new URLSearchParams(window.location.search).get("item");
+    if (!key || !Object.prototype.hasOwnProperty.call(products, key)) return;
+    el.textContent = products[key].name + "の";
+    track("bank_apply_complete", itemParams(key));
+  }
+
   // ---- メールアドレス：HTMLにそのまま書かず、表示のときに組み立てる（アドレス収集対策） ----
   function showMailAddresses() {
     document.querySelectorAll("[data-mail-user]").forEach(function (el) {
@@ -167,6 +177,7 @@
     fillProducts();
     renderButtons();
     showOrderId();
+    showApplied();
     if (document.querySelector("[data-paypal]")) {
       track("view_item_list", { items: Object.keys(products).map(function (k) { return { item_id: k, item_name: products[k].name }; }) });
     }
