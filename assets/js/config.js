@@ -1,8 +1,14 @@
 // 販売ページの設定。価格・決済・計測の値はここだけを書き換える。
 window.SHOP_CONFIG = {
   // PayPalの「クライアントID」（公開用の識別子。シークレットは絶対に書かない）。
-  // 空のあいだは購入ボタンの代わりに「準備中」と表示する。
-  paypalClientId: "",
+  // paypalMode が "sandbox" のときはテスト用ID、"live" のときは本番用IDを使う。
+  // 使うIDが空なら、購入ボタンの代わりに「準備中」と表示する。
+  // 【公開の日】本番用IDを live に入れ、paypalMode を "live" に変える。
+  paypalMode: "sandbox",
+  paypalClientIds: {
+    sandbox: "BAAmNDaB-DthXnXWiRbgisz-p7smLHID5lZQZB6Nskx1ZL2n4N-B1e3xtVk7ImW0mCdUKkrQHB9etGAP1U", // PayPal Developer の Sandbox アプリ「kazutama-shop」
+    live: "",
+  },
 
   // Googleアナリティクス4の測定ID（例: "G-XXXXXXXXXX"）。空なら計測しない。
   ga4Id: "",

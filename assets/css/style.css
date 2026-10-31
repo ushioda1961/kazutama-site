@@ -230,3 +230,4 @@ table.law th { width: 32%; background: var(--paper); color: var(--navy); }
 body.has-sticky { padding-bottom: 76px; }
 @media (min-width: 900px) { body.has-sticky { padding-bottom: 0; } }
 .photo-credit { display: block; text-align: right; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+.sandbox-banner { background: #c0392b; color: #fff; text-align: center; font-weight: 700; font-size: 13px; padding: 6px 12px; letter-spacing: .05em; }

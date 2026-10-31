@@ -66,15 +66,21 @@
     container.appendChild(note);
   }
 
+  function paypalClientId() {
+    var ids = cfg.paypalClientIds || {};
+    return ids[cfg.paypalMode === "live" ? "live" : "sandbox"] || "";
+  }
+
   function renderButtons() {
     var holders = document.querySelectorAll("[data-paypal]");
     if (!holders.length) return;
-    if (!cfg.paypalClientId) {
+    var clientId = paypalClientId();
+    if (!clientId) {
       holders.forEach(function (h) { showPending(h, "オンライン決済は準備中です。お急ぎの方は銀行振込でお申し込みください。"); });
       return;
     }
     var s = document.createElement("script");
-    s.src = "https://www.paypal.com/sdk/js?client-id=" + encodeURIComponent(cfg.paypalClientId) +
+    s.src = "https://www.paypal.com/sdk/js?client-id=" + encodeURIComponent(clientId) +
       "&currency=JPY&locale=ja_JP&components=buttons";
     s.onload = function () {
       holders.forEach(function (h) {
@@ -128,7 +134,17 @@
     }
   }
 
+  // テスト決済のあいだは、本番と取り違えないよう帯を出す
+  function showSandboxBanner() {
+    if (cfg.paypalMode === "live" || !document.querySelector("[data-paypal]")) return;
+    var bar = document.createElement("div");
+    bar.className = "sandbox-banner";
+    bar.textContent = "テスト決済モードです（本物のお金は動きません）";
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    showSandboxBanner();
     loadGa4();
     fillProducts();
     renderButtons();
