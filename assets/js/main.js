@@ -93,6 +93,11 @@
         window.paypal.Buttons({
           style: { layout: "vertical", color: "gold", shape: "rect", label: "pay" },
           onClick: function () { track("begin_checkout", itemParams(key)); },
+          // お届けは日本国内のみ。日本以外の住所を選んだら先に進めない
+          onShippingAddressChange: function (data, actions) {
+            var cc = data.shippingAddress && data.shippingAddress.countryCode;
+            if (cc && cc !== "JP") return actions.reject(data.errors && data.errors.COUNTRY_ERROR);
+          },
           createOrder: function (data, actions) {
             return actions.order.create({
               purchase_units: [{
