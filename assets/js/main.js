@@ -134,6 +134,18 @@
     }
   }
 
+  // ---- メールアドレス：HTMLにそのまま書かず、表示のときに組み立てる（アドレス収集対策） ----
+  function showMailAddresses() {
+    document.querySelectorAll("[data-mail-user]").forEach(function (el) {
+      var addr = el.getAttribute("data-mail-user") + "@" + el.getAttribute("data-mail-domain");
+      var a = document.createElement("a");
+      a.href = "mailto:" + addr;
+      a.textContent = addr;
+      el.textContent = "";
+      el.appendChild(a);
+    });
+  }
+
   // テスト決済のあいだは、本番と取り違えないよう帯を出す
   function showSandboxBanner() {
     if (cfg.paypalMode === "live" || !document.querySelector("[data-paypal]")) return;
@@ -145,6 +157,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     showSandboxBanner();
+    showMailAddresses();
     loadGa4();
     fillProducts();
     renderButtons();
