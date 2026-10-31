@@ -113,6 +113,14 @@ a { color: var(--navy-2); }
 .trust-photo figcaption { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.5; }
 .trust-photo figcaption b { display: block; color: var(--navy); font-size: 14px; }
 .trust-text { margin-top: 18px; text-align: center; }
+.media-badge { display: flex; gap: 16px; align-items: flex-start; margin-top: 22px; padding: 18px 20px; background: #fff; border: 1.5px solid var(--gold-soft); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(176, 141, 73, .12); }
+.media-label { flex: 0 0 auto; background: var(--gold); color: #fff; font-weight: 700; font-size: 13px; padding: 4px 10px; border-radius: 6px; letter-spacing: .08em; }
+.media-badge p { margin: 0; }
+.media-mag { font-weight: 700; color: var(--navy); }
+.media-mag small { font-weight: 400; color: var(--muted); }
+.media-title { font-family: var(--serif); color: var(--navy); font-size: 18px; margin: 6px 0 4px !important; line-height: 1.5; }
+.media-who { font-size: 13.5px; color: var(--muted); }
+@media (max-width: 600px) { .media-badge { flex-direction: column; gap: 8px; } }
 @media (max-width: 600px) { .trust-photo figcaption { font-size: 11px; } .trust-photo figcaption b { font-size: 12.5px; } .trust-text { text-align: left; } }
 
 /* セクション共通 */
