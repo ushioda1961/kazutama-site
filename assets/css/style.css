@@ -229,3 +229,4 @@ table.law th { width: 32%; background: var(--paper); color: var(--navy); }
 @media (min-width: 900px) { .sticky-buy { display: none; } }
 body.has-sticky { padding-bottom: 76px; }
 @media (min-width: 900px) { body.has-sticky { padding-bottom: 0; } }
+.photo-credit { display: block; text-align: right; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
