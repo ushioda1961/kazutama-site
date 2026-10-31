@@ -22,17 +22,17 @@ window.SHOP_CONFIG = {
   products: {
     reiwa: {
       name: "数霊REIWA",
-      // 税込価格（円）。現行ページは「180,000円（税別）」→ 税込198,000円で仮置き【要確認】
+      // 税込価格（円）。180,000円＋税（現行のPayPal決済リンクと一致、2026-10-31 確認）
       price: 198000,
       // 銀行振込の申込先（現行のステップメール型フォーム）
       bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=cUzEvHSXz",
     },
     sora: {
       name: "数霊ZENWA・空",
-      // 税込価格（円）。吉野内先生の解説動画のスライド「217,800円(税込)」より【販売価格として要確認】
+      // 税込価格（円）。198,000円＋税（現行のPayPal決済リンクと一致、2026-10-31 確認）
       // 未確定にしたいときは null（「価格確認中」と表示し、購入ボタンを出さない）
       price: 217800,
-      // 振込の申込先。現行は旧ZENWA用フォーム【要確認】
+      // 銀行振込の申込先（アスメル No.701508。自動返信は「数霊ZENWA・空」に更新済み）
       bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=ebeEvHSc",
     },
   },
