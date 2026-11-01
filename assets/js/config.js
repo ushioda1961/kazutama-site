@@ -13,8 +13,8 @@ window.SHOP_CONFIG = {
   // Googleアナリティクス4の測定ID（例: "G-XXXXXXXXXX"）。空なら計測しない。
   ga4Id: "",
 
-  // YouTube「数霊チャンネル」のURL（決まったら差し替え）
-  youtubeChannelUrl: "",
+  // YouTube「数霊チャンネル」のURL
+  youtubeChannelUrl: "https://www.youtube.com/@kazutama-CH",
 
   // 販売者名（PayPalの画面に表示される）
   brandName: "株式会社ユープランニング",
