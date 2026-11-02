@@ -1,6 +1,6 @@
 # 数霊チャンネル 公式ご購入ページ（kazutama.you-planning.org）
 
-YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA・空の販売ページ。
+YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA・空と、一緒に使う NCキューブプラス（2026-11-02 追加、銀行振込はアスメル No.621818）の販売ページ。
 販売者：株式会社ユープランニング（本物研究所 販売代理店）
 
 ## 構成
@@ -16,6 +16,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 | `assets/js/main.js` | 価格表示、PayPalボタン、GA4のイベント送信 |
 | `assets/css/style.css` | 見た目 |
 | `CNAME` | GitHub Pagesの独自ドメイン（kazutama.you-planning.org） |
+| `assets/img/nccube*.jpg` | NCキューブプラスの写真（元：F:\数霊REIWA\NCキューブプラス。数霊REIWAとつないだ所・コンソール・トレイパッド） |
 | `assets/img/ogp.jpg` | SNS（Facebook・LINE・X など）にリンクを貼ったときに出る画像（1200×630、両商品＋販売者名）。`index.html` の og:image は必ず https から始まる完全なURLで書く |
 | `v/<回><r|s>/index.html` | YouTube 概要欄用の短い入口（utm 付きの販売ページへ移る） |
 
