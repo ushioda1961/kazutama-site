@@ -35,5 +35,12 @@ window.SHOP_CONFIG = {
       // 銀行振込の申込先（アスメル No.701508。自動返信は「数霊ZENWA・空」に更新済み）
       bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=ebeEvHSc",
     },
+    nccube: {
+      name: "NCキューブプラス",
+      // 税込価格（円）・送料無料（定価 220,000円 税込、2026-11-02 牛さん確認）
+      price: 220000,
+      // 銀行振込の申込先（アスメル「NCキューブプラス申込フォーム」）
+      bankTransferUrl: "https://1lejend.com/stepmail/kd.php?no=couejIRnM",
+    },
   },
 };

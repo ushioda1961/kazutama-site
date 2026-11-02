@@ -231,3 +231,34 @@ body.has-sticky { padding-bottom: 76px; }
 @media (min-width: 900px) { body.has-sticky { padding-bottom: 0; } }
 .photo-credit { display: block; text-align: right; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
 .sandbox-banner { background: #c0392b; color: #fff; text-align: center; font-weight: 700; font-size: 13px; padding: 6px 12px; letter-spacing: .05em; }
+
+/* 数霊と一緒に使う（NCキューブプラス） */
+.sec-note { margin: 8px 0 0; font-size: 13.5px; color: var(--muted); }
+.addon { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+.addon-head { text-align: center; margin: 0 auto 28px; max-width: 760px; }
+.addon-head .en { display: block; color: var(--gold); font-size: 12px; letter-spacing: .25em; font-weight: 700; }
+.addon-head h3 { font-family: var(--serif); color: var(--navy); font-size: clamp(21px, 3.8vw, 27px); margin: 6px 0 8px; line-height: 1.45; }
+.addon-head p { margin: 0; font-size: 15px; }
+.addon-body { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 900px) { .addon-body { grid-template-columns: 1.15fr 1fr; } }
+.addon-photo { margin: 0; }
+.addon-photo img { width: 100%; height: auto; border-radius: var(--radius); }
+.addon-photo figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.addon-points { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; font-size: 14.5px; }
+.addon-points li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.addon-points b { display: block; color: var(--navy); font-size: 15.5px; margin-bottom: 2px; }
+.addon-parts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.addon-parts figure { margin: 0; text-align: center; }
+.addon-parts img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+.addon-parts figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.addon-videos { margin-top: 32px; }
+.addon-videos h4 { font-family: var(--serif); color: var(--navy); font-size: 19px; margin: 0 0 12px; }
+.video-cards { display: grid; gap: 12px; }
+@media (min-width: 640px) { .video-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .video-cards { grid-template-columns: repeat(4, 1fr); } }
+.video-card { display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--ink); font-size: 12.5px; line-height: 1.55; }
+.video-card:hover { border-color: var(--gold); }
+.video-card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--cream); }
+.video-card span { display: block; padding: 10px 12px 12px; color: var(--muted); }
+.video-card b { display: block; color: var(--navy); font-size: 14px; margin-bottom: 2px; }
+.video-more { font-size: 13.5px; margin: 12px 0 0; }
