@@ -52,6 +52,12 @@ YouTubeの概要欄のリンクには、どの動画から来たか分かるよ�
 - **シークレット（Secret）は絶対にこのリポジトリに書かない**
 - 価格が `null` の商品は「価格確認中」と表示し、購入ボタンを出さない
 - テストは PayPal の Sandbox（テスト用）クライアントIDで行い、確認後に本番IDへ差し替える
+- 2026-11-02 から本番（`paypalMode: "live"`）。本番アプリは PayPal Developer の Live「kazutama-shop」、売上はビジネスアカウント u-mail@ushioda-masaaki.com に入る
+- Sandbox では購入完了まで確認済み。本番は注文の作成（支払い画面が開くところ）まで確認。最初の実際のお支払いで、PayPal の取引一覧と thanks.html の注文番号を確かめる
+
+## 計測
+
+- GA4：アカウント「ushioda」→ プロパティ「数霊チャンネル 公式ご購入ページ」（測定ID G-1M6DKR13NM）
 
 ## 未確定（要確認）
 

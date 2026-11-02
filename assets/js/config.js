@@ -4,7 +4,7 @@ window.SHOP_CONFIG = {
   // paypalMode が "sandbox" のときはテスト用ID、"live" のときは本番用IDを使う。
   // 使うIDが空なら、購入ボタンの代わりに「準備中」と表示する。
   // 【公開の日】本番用IDを live に入れ、paypalMode を "live" に変える。
-  paypalMode: "sandbox",
+  paypalMode: "live", // 2026-11-02 本番に切り替え（テストに戻すときは "sandbox"）
   paypalClientIds: {
     sandbox: "BAAmNDaB-DthXnXWiRbgisz-p7smLHID5lZQZB6Nskx1ZL2n4N-B1e3xtVk7ImW0mCdUKkrQHB9etGAP1U", // PayPal Developer の Sandbox アプリ「kazutama-shop」
     live: "BAAhZwG6BFi-sX3gDEa6u8W1Zk59SKvoAoXRg4FncCVKZ13RV9Q5j5LsWepw814k5JdScT94bSqfm-p33o", // PayPal Developer の Live アプリ「kazutama-shop」（2026-11-02 作成）
