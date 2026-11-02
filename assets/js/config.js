@@ -7,11 +7,11 @@ window.SHOP_CONFIG = {
   paypalMode: "sandbox",
   paypalClientIds: {
     sandbox: "BAAmNDaB-DthXnXWiRbgisz-p7smLHID5lZQZB6Nskx1ZL2n4N-B1e3xtVk7ImW0mCdUKkrQHB9etGAP1U", // PayPal Developer の Sandbox アプリ「kazutama-shop」
-    live: "",
+    live: "BAAhZwG6BFi-sX3gDEa6u8W1Zk59SKvoAoXRg4FncCVKZ13RV9Q5j5LsWepw814k5JdScT94bSqfm-p33o", // PayPal Developer の Live アプリ「kazutama-shop」（2026-11-02 作成）
   },
 
   // Googleアナリティクス4の測定ID（例: "G-XXXXXXXXXX"）。空なら計測しない。
-  ga4Id: "",
+  ga4Id: "G-1M6DKR13NM", // GA4 アカウント「ushioda」のプロパティ「数霊チャンネル 公式ご購入ページ」（2026-11-02 作成）
 
   // YouTube「数霊チャンネル」のURL
   youtubeChannelUrl: "https://www.youtube.com/@kazutama-CH",
