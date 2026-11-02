@@ -16,6 +16,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 | `assets/js/main.js` | 価格表示、PayPalボタン、GA4のイベント送信 |
 | `assets/css/style.css` | 見た目 |
 | `CNAME` | GitHub Pagesの独自ドメイン（kazutama.you-planning.org） |
+| `assets/img/ogp.jpg` | SNS（Facebook・LINE・X など）にリンクを貼ったときに出る画像（1200×630、両商品＋販売者名）。`index.html` の og:image は必ず https から始まる完全なURLで書く |
 | `v/<回><r|s>/index.html` | YouTube 概要欄用の短い入口（utm 付きの販売ページへ移る） |
 
 ## 公開の仕組み
