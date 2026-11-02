@@ -39,6 +39,7 @@ a { color: var(--navy-2); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
 .brand { font-family: var(--serif); font-weight: 700; color: var(--navy); text-decoration: none; font-size: 17px; letter-spacing: .04em; }
 .brand small { display: block; font-family: var(--sans); font-weight: 400; font-size: 11px; color: var(--muted); letter-spacing: .02em; }
+.brand small span { display: inline-block; }
 .header-cta { font-size: 14px; }
 
 @media (max-width: 600px) {
@@ -81,8 +82,11 @@ a { color: var(--navy-2); }
 .hero-products .eyebrow { color: #d6bd84; }
 .hero-products h1 { color: #fff; font-size: clamp(26px, 5.4vw, 44px); margin: 0 0 10px; }
 .hero-products h1 .amp { color: #d6bd84; margin: 0 .1em; }
+.hero-products h1 .nw { display: inline-block; }
 .hero-products h1 small { display: block; font-size: .5em; letter-spacing: .3em; color: #d6bd84; margin-top: 8px; font-family: var(--sans); font-weight: 700; }
-.hero-products .lead { color: #cfd5e3; max-width: 640px; margin: 0 auto; font-size: 15.5px; }
+.hero-products p.lead { color: #cfd5e3; max-width: 640px; margin: 0 auto; font-size: 15.5px; text-align: center; }
+/* 言葉のまとまり（span）の途中では改行しない */
+.hero-products p.lead span { display: inline-block; }
 .hero-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 760px; margin: 6px auto 0; width: 100%; }
 .pick { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 10px 14px; border-radius: 16px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(214, 189, 132, .45); color: #fff; text-decoration: none; transition: background .2s, transform .2s; }
 .pick:hover { transform: translateY(-2px); }
