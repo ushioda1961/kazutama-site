@@ -38,7 +38,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 ## 銀行振込の申込（アスメル）
 
 - 申込フォーム・自動返信・通知はステップメール「アスメル」（1lejend.com）を使う。通知先は kazutama@you-planning.org
-- 公開の日に、アスメルの「購読完了ページURL」を次に付け替える（旧WordPressを消す前に必ず）
+- アスメルの「購読完了ページURL」は 2026-11-02 に次へ付け替え済み（旧WordPressの完了ページはもう使っていない）
   - 数霊REIWA：`https://kazutama.you-planning.org/apply-thanks.html?item=reiwa`
   - 数霊ZENWA・空：`https://kazutama.you-planning.org/apply-thanks.html?item=sora`
 - 自動返信の文面の改訂案は `D:\数霊プロジェクト\申込フォーム_アスメル\` にある（口座番号を含むので、このリポジトリには入れない）
