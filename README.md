@@ -16,6 +16,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 | `assets/js/main.js` | 価格表示、PayPalボタン、GA4のイベント送信 |
 | `assets/css/style.css` | 見た目 |
 | `CNAME` | GitHub Pagesの独自ドメイン（kazutama.you-planning.org） |
+| `v/<回><r|s>/index.html` | YouTube 概要欄用の短い入口（utm 付きの販売ページへ移る） |
 
 ## 公開の仕組み
 
@@ -43,8 +44,11 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
   - 数霊ZENWA・空：`https://kazutama.you-planning.org/apply-thanks.html?item=sora`
 - 自動返信の文面の改訂案は `D:\数霊プロジェクト\申込フォーム_アスメル\` にある（口座番号を含むので、このリポジトリには入れない）
 
-YouTubeの概要欄のリンクには、どの動画から来たか分かるように印を付ける：
-`https://kazutama.you-planning.org/?utm_source=youtube&utm_medium=video&utm_campaign=<動画の番号>`
+YouTubeの概要欄のリンクには、どの動画から来たか分かるように印を付ける。長いので、概要欄には**短い入口** `/v/<回の番号><r|s>` を書く（r＝数霊REIWA、s＝数霊ZENWA・空）：
+
+- 例：`https://kazutama.you-planning.org/v/00r` → `/?utm_source=youtube&utm_medium=video&utm_campaign=aisatsu#reiwa` に自動で移る（`v/00r/index.html` の meta refresh）
+- 今ある入口：00＝aisatsu（ご挨拶）、01＝morimoto01（森本くん 監修就任）、02＝reiwa01（使い方#1）、03＝morimoto02（やまと心転写）、04＝reiwa02（使い方#2 開封）
+- 新しい回を出すときは、`v/00r/` をコピーして `v/<回><r|s>/` を作り、中の `utm_campaign` と `#reiwa`／`#sora`、商品名を書き換える
 
 ## 決済（PayPal）
 
