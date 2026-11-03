@@ -49,7 +49,7 @@ YouTube「数霊チャンネル」から誘導する、数霊REIWA・数霊ZENWA
 YouTubeの概要欄のリンクには、どの動画から来たか分かるように印を付ける。長いので、概要欄には**短い入口** `/v/<回の番号><r|s>` を書く（r＝数霊REIWA、s＝数霊ZENWA・空）：
 
 - 例：`https://kazutama.you-planning.org/v/00r` → `/?utm_source=youtube&utm_medium=video&utm_campaign=aisatsu#reiwa` に自動で移る（`v/00r/index.html` の meta refresh）
-- 今ある入口：00＝aisatsu（ご挨拶）、01＝morimoto01（森本くん 監修就任）、02＝reiwa01（使い方#1）、03＝morimoto02（やまと心転写）、04＝reiwa02（使い方#2 開封）、05＝morimoto03（森本くん ブルーシリカで遠隔ヒーリング）、06〜18＝reiwa03〜reiwa15（数霊REIWAの使い方 第3〜15回。r は全回、18 だけ s も）
+- 今ある入口：00＝aisatsu（ご挨拶）、01＝morimoto01（森本くん 監修就任）、02＝reiwa01（使い方#1）、03＝morimoto02（やまと心転写）、04＝reiwa02（使い方#2 開封）、05＝morimoto03（森本くん ブルーシリカで遠隔ヒーリング）、06〜18＝reiwa03〜reiwa15（数霊REIWAの使い方 第3〜15回。r は全回、18 だけ s も）、34＝morimoto04（森本くん 数霊は人間の成長を促す）、19・20＝zenwa01・zenwa02（数霊ZENWA・空の使い方 第1・2回。s だけ）
 - 新しい回を出すときは、`v/00r/` をコピーして `v/<回><r|s>/` を作り、中の `utm_campaign` と `#reiwa`／`#sora`、商品名を書き換える
 
 ## 決済（PayPal）
