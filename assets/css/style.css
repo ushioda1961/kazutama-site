@@ -170,6 +170,15 @@ section.block.alt { background: var(--paper); }
 .pay-pending { background: var(--cream); border-radius: 10px; padding: 12px 14px; font-size: 14px; margin: 0 0 10px; }
 .product .bank { width: 100%; margin-top: 10px; }
 
+/* ご紹介者のお名前（main.js が PayPal ボタンの上に出す） */
+.ref-box { background: var(--cream); border-radius: 10px; padding: 12px 14px; margin: 0 0 14px; }
+.ref-box label { display: block; }
+.ref-box .ref-title { font-weight: 700; color: var(--navy); font-size: 15px; }
+.ref-box .ref-sub { font-size: 13px; color: var(--muted); }
+.ref-box input { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; font-size: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+.ref-box input:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+.ref-box .ref-note { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+
 /* 特典 */
 .gifts { display: grid; gap: 14px; }
 @media (min-width: 760px) { .gifts { grid-template-columns: repeat(2, 1fr); } .gift:last-child:nth-child(odd) { grid-column: 1 / -1; } }

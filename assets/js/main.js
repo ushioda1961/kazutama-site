@@ -16,12 +16,98 @@
   function itemParams(key) {
     var p = products[key];
     if (!p) return {};
-    return {
+    var out = {
       currency: "JPY",
       value: p.price || 0,
       items: [{ item_id: key, item_name: p.name, price: p.price || 0, quantity: 1 }],
     };
+    if (refCode) out.ref_code = refCode;
+    return out;
   }
+
+  // ---- ご紹介（チラシの QR の番号と、お客様が書くご紹介者のお名前） ----
+  // チラシの QR は v/c01r などの短い入口 → /?…&ref=C01 に来る。番号は名前ではなく記号（対応表は公開しない _非公開 にだけある）。
+  // 番号はこのブラウザに 90 日だけ覚えておき、PayPal の注文の「説明」に「（ご紹介 C01 お名前）」として載せる。
+  // PayPal の「支払いの受領通知」メールにこの説明が載り、注文の見張りが拾う。
+  var REF_KEY = "kz_ref";
+  var REF_DAYS = 90;
+  var REF_PAT = /^[A-Z][0-9]{2,3}$/;
+  var refCode = readRef();
+  var refName = "";
+
+  function readRef() {
+    var code = "";
+    try {
+      var q = (new URLSearchParams(window.location.search).get("ref") || "").toUpperCase();
+      if (REF_PAT.test(q)) code = q;
+    } catch (e) {}
+    try {
+      var ls = window.localStorage;
+      if (code) {
+        ls.setItem(REF_KEY, JSON.stringify({ code: code, t: Date.now() }));
+      } else {
+        var v = JSON.parse(ls.getItem(REF_KEY) || "null");
+        if (v && REF_PAT.test(v.code) && Date.now() - v.t < REF_DAYS * 864e5) code = v.code;
+      }
+    } catch (e) {}
+    return code;
+  }
+
+  function cleanName(s) {
+    return String(s || "").replace(/[\u0000-\u001f\u007f<>"'`\\]/g, "").replace(/\s+/g, " ").trim().slice(0, 30);
+  }
+
+  function orderDescription(key) {
+    var p = products[key];
+    var parts = [];
+    if (refCode) parts.push(refCode);
+    var n = cleanName(refName);
+    if (n) parts.push(n);
+    return parts.length ? (p.name + "（ご紹介 " + parts.join(" ") + "）").slice(0, 127) : p.name;
+  }
+
+  // PayPal ボタンの上に「ご紹介者のお名前」の欄を出す（どの商品の欄に書いても全部にそろえる）
+  function addRefBoxes() {
+    try { refName = cleanName(window.sessionStorage.getItem("kz_ref_name")); } catch (e) {}
+    var inputs = [];
+    document.querySelectorAll("[data-paypal]").forEach(function (h) {
+      var pay = h.parentNode;
+      var box = document.createElement("div");
+      box.className = "ref-box";
+      var label = document.createElement("label");
+      var title = document.createElement("span");
+      title.className = "ref-title";
+      title.textContent = "ご紹介者のお名前";
+      var sub = document.createElement("span");
+      sub.className = "ref-sub";
+      sub.textContent = "（ご紹介を受けた方だけ）";
+      var input = document.createElement("input");
+      input.type = "text";
+      input.maxLength = 30;
+      input.autocomplete = "off";
+      input.placeholder = "例）山田 花子";
+      input.value = refName;
+      input.setAttribute("data-ref-name", h.getAttribute("data-paypal"));
+      label.appendChild(title);
+      label.appendChild(sub);
+      label.appendChild(input);
+      var note = document.createElement("p");
+      note.className = "ref-note";
+      note.textContent = "銀行振込でお申し込みの方は、申込フォームにご紹介者のお名前をお書きください。";
+      box.appendChild(label);
+      box.appendChild(note);
+      pay.insertBefore(box, pay.firstChild);
+      inputs.push(input);
+      input.addEventListener("input", function () {
+        refName = input.value;
+        inputs.forEach(function (o) { if (o !== input) o.value = input.value; });
+        try { window.sessionStorage.setItem("kz_ref_name", cleanName(refName)); } catch (e) {}
+      });
+    });
+  }
+
+  // 確かめ用（画面には何も出さない）
+  window.KZ_REF = { code: function () { return refCode; }, describe: orderDescription };
 
   function loadGa4() {
     if (!cfg.ga4Id) return;
@@ -102,7 +188,8 @@
             return actions.order.create({
               purchase_units: [{
                 reference_id: key,
-                description: p.name,
+                description: orderDescription(key),
+                custom_id: refCode || undefined,
                 amount: { currency_code: "JPY", value: String(p.price) },
               }],
               application_context: { brand_name: cfg.brandName, shipping_preference: "GET_FROM_FILE" },
@@ -175,6 +262,7 @@
     showMailAddresses();
     loadGa4();
     fillProducts();
+    addRefBoxes();
     renderButtons();
     showOrderId();
     showApplied();
