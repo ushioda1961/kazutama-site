@@ -275,3 +275,29 @@ body.has-sticky { padding-bottom: 76px; }
 .video-card span { display: block; padding: 10px 12px 12px; color: var(--muted); }
 .video-card b { display: block; color: var(--navy); font-size: 14px; margin-bottom: 2px; }
 .video-more { font-size: 13.5px; margin: 12px 0 0; }
+
+/* 2026-11-25 ザ・フナイ 2027年1月号 掲載 */
+.media-feature { max-width: 900px; margin: 26px auto 0; padding: 22px 24px; background: #fff; border: 1.5px solid var(--gold-soft); border-radius: var(--radius); box-shadow: 0 10px 28px rgba(176, 141, 73, .14); }
+.media-head { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+.media-head .media-mag { margin: 0; }
+.media-body { display: flex; gap: 22px; align-items: flex-start; }
+.media-cover { flex: 0 0 200px; width: 200px; height: auto; border-radius: 3px; box-shadow: 0 10px 24px rgba(20, 30, 60, .28); transform: rotate(-2deg); margin: 4px 6px 0 4px; }
+.media-text p { margin: 0 0 8px; }
+.media-feat { font-weight: 700; color: var(--gold); font-size: 14.5px; }
+.media-pr { font-size: 14.5px; line-height: 1.85; }
+.media-links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 4px !important; }
+.media-links a { font-weight: 700; color: var(--navy); }
+.media-page { margin: 18px 0 0; text-align: center; }
+.media-page img { display: block; margin: 0 auto; max-width: 520px; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 6px 18px rgba(20, 30, 60, .14); }
+.media-page figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.news-ribbon { display: flex; align-items: center; gap: 10px; max-width: 740px; margin: 16px auto 0; padding: 10px 14px; border: 1px solid rgba(214, 189, 132, .7); border-radius: 10px; background: rgba(255, 255, 255, .07); color: #f3ead2; text-decoration: none; font-size: 14px; line-height: 1.5; text-align: left; }
+.news-ribbon:hover { background: rgba(255, 255, 255, .13); }
+.news-tag { flex: 0 0 auto; background: var(--gold); color: #fff; font-weight: 700; font-size: 12px; padding: 2px 9px; border-radius: 5px; letter-spacing: .08em; }
+.news-go { margin-left: auto; color: #d6bd84; font-weight: 700; }
+.media-chip { align-self: flex-start; display: inline-block; font-size: 12px; font-weight: 700; color: var(--navy); background: #faf4e6; border: 1px solid var(--gold-soft); border-radius: 6px; padding: 3px 10px; margin: -4px 0 10px; text-decoration: none; }
+@media (max-width: 600px) {
+  .media-feature { padding: 18px 16px; }
+  .media-body { flex-direction: column; align-items: center; }
+  .media-cover { width: 62%; flex-basis: auto; max-width: 240px; }
+  .news-ribbon { font-size: 13px; }
+}
