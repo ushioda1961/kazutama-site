@@ -257,8 +257,19 @@
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
+
+  // ザ・フナイ紹介動画（2026-11-27 くろ）：data-show-from の時刻（12/1 7:00）から表示。押すと YouTube を新しいタブで開く（CSP の frame-src は PayPal だけなので埋め込まない）
+  function showTimedBlocks() {
+    var now = Date.now();
+    document.querySelectorAll("[data-show-from]").forEach(function (el) {
+      var t = Date.parse(el.getAttribute("data-show-from"));
+      if (!isNaN(t) && now >= t) el.hidden = false;
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     showSandboxBanner();
+    showTimedBlocks();
     showMailAddresses();
     loadGa4();
     fillProducts();
